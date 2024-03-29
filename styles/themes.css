@@ -7,6 +7,8 @@
 
 
 :root.theme-dark {
+    --title-weight: 785;
+    --text-weight: 465;
     --shadow-color:#000000;
     --core-color: #ff0000;
     --mix-color-button: #00cc14;
@@ -19,6 +21,8 @@
 }
 
 :root.theme-light {
+    --title-weight: 700;
+    --text-weight: 400;
     --shadow-color:#bfbdbd;
     --core-color: #fff;
     --mix-color-button: #fff;

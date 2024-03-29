@@ -38,7 +38,7 @@
   border: 2px solid var(--text-color);
   align-items: center;
   gap: 20px;
-  font-weight: 400;
+  font-weight: var(--text-weight);
 }
 
 .header__title {
@@ -186,7 +186,7 @@
 
 .card__content__list__items {
   font-size: 18px;
-  font-weight: 465;
+  font-weight: var(--text-weight);
   line-height: 21px;
   text-align: left;
   font-variation-settings: "slnt" 0;
