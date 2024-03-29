@@ -38,19 +38,17 @@
   border: 2px solid var(--text-color);
   align-items: center;
   gap: 20px;
+  font-weight: 400;
 }
 
 .header__title {
   margin-top: 120px;
   font-size: clamp(3.0625rem, 2.2625rem + 3.2vw, 4.0625rem);
-  font-weight: 400;
   line-height: 49px;
   text-transform: uppercase;
 }
 
 .header__subtitle {
-  font-size: 14px;
-  font-weight: 400;
   text-transform: uppercase;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
@@ -138,7 +136,6 @@
   box-sizing: border-box;
   background-color: var(--background-color);
   font-size: 18px;
-  font-weight: 700;
   line-height: 21.78px;
   padding: 5px 10px 3px 10px;
 }
@@ -279,7 +276,6 @@
   gap: 8px;
   outline: 0;
   border: 0;
-  background-color: transparent;
   font-family: var(--font-family-PressStart2P);
   font-size: 14px;
   line-height: 12.6px;
@@ -348,10 +344,6 @@
   gap: 30px 20px;
   min-width: 257px;
   max-width: 293px;
-}
-
-dialog:not([open]) {
-  display: none;
 }
 
 .svg-modal {

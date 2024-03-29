@@ -16,10 +16,9 @@
     --background-image: 
     repeating-linear-gradient(to right, #000, #000 2px, transparent 3px, transparent 4px),
     repeating-linear-gradient(to bottom, transparent, transparent 2px, #007f0c 2px, #004306 4px);
-
 }
 
-:root.theme-light{
+:root.theme-light {
     --shadow-color:#bfbdbd;
     --core-color: #fff;
     --mix-color-button: #fff;
@@ -30,4 +29,4 @@
     repeating-linear-gradient(90deg, #d3d3d3 0px 2px, transparent 2px 4px),
     repeating-linear-gradient(180deg,#d3d3d3 0px 2px, transparent 2px 4px),
     linear-gradient(180deg, #e7e7e7 0%, #1a1a1a 100%);
-  }
+}
