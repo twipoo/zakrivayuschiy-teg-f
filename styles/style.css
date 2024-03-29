@@ -3,8 +3,8 @@
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
+✦ like-icon — для svg-иконки анимированного сердца-
+✦ card__like-button — для кнопки Like рядом с иконкой-
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
@@ -17,4 +17,422 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-family-inter);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-variation-settings: var(--wght), var(--wdth);
+  background-image: var(--background-image);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  margin-top: 100px;
+  max-width: 700px;
+  width: 100%;
+  flex-direction: column;
+  font-family: var(--font-family-PressStart2P);
+  background-color: var(--background-color);
+  border: 2px solid var(--text-color);
+  align-items: center;
+  gap: 20px;
+}
+
+.header__title {
+  margin-top: 120px;
+  font-size: clamp(3.0625rem, 2.2625rem + 3.2vw, 4.0625rem);
+  font-weight: 400;
+  line-height: 49px;
+  text-transform: uppercase;
+}
+
+.header__subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.theme-menu {
+  padding: 4px 0 24px 20px;
+}
+
+.theme-menu__list {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.theme-menu__button {
+  background-color: transparent;
+  border: transparent;
+  position: relative;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  transition: color 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  cursor: pointer;
+  color: var(--active-color);
+}
+
+.theme-menu__button:disabled {
+  color: var(--active-color);
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: -13px;
+  animation: arrow 0.5s ease-in-out infinite alternate;
+  color: var(--active-color);
+}
+
+.theme-menu__button:focus {
+  outline: 0;
+}
+
+.theme-menu__button:focus-visible {
+  color: var(--active-color);
+}
+
+.theme-menu__button:not(:disabled)::after {
+  content: "";
+  display: block;
+  background: currentColor;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  inline-size: 100%;
+  block-size: 2px;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.main {
+  margin-block-start: 100px;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 53px;
+}
+
+.main__list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--text-color);
+}
+
+.card__title {
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.78px;
+  padding: 5px 10px 3px 10px;
+}
+
+.card__cover {
+  position: relative;
+  display: block;
+  border-top: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
+}
+
+.card__cover__signature {
+  font-family: var(--font-family-PressStart2P);
+  font-size: 14px;
+  line-height: 14px;
+  position: absolute;
+  opacity: 0.8;
+  top: 19px;
+  right: 7px;
+  color: var(--active-color);
+  text-shadow: 1px var(--shadow-color);
+  mix-blend-mode: hard-light; /* Режим смешивания */
+  padding: 5px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+
+.card__cover__image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  gap: 25px;
+}
+
+.card__content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px 25px 0 25px;
+}
+
+.card__content__list__items {
+  font-size: 18px;
+  font-weight: 465;
+  line-height: 21px;
+  text-align: left;
+  font-variation-settings: "slnt" 0;
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: end;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  gap: 4px;
+}
+
+.card__icon-button {
+  display: flex;
+  background-color: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  height: 38px;
+  transition: border-color 0.3s ease;
+  padding: 0;
+}
+
+.card__icon-button:focus {
+  outline: 0;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--text-color, #000000);
+}
+
+.card__like-button {
+  font-family: var(--font-family-PressStart2P);
+  background-color: transparent;
+  border: 2px solid var(--text-color);
+  font-size: 14px;
+  position: relative;
+  padding: 9px 35px 9px 35px;
+  cursor: pointer;
+}
+
+.card__like-button:focus {
+  outline: 0;
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text-color);
+}
+
+.card__like-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background: var(--text-color);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease; /* Плавное масштабирование */
+}
+
+.card__like-button:hover::after {
+  transform: scaleX(1);
+}
+
+.button__text:nth-child(1) {
+  mix-blend-mode: difference;
+  color: var(--mix-color-button);
+  position: relative;
+  z-index: 2;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.footer {
+  margin-bottom: 100px;
+  border: 2px solid var(--text-color);
+}
+
+.footer-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  font-family: var(--font-family-PressStart2P);
+  font-size: 14px;
+  line-height: 12.6px;
+  cursor: pointer;
+  padding-block: 0;
+  background-color: var(--background-color);
+  padding: 15px 20px 17px 20px;
+}
+
+.footer-button:focus {
+  outline: 0;
+}
+
+.footer-button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text-color);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 306px;
+  height: 82px;
+  background-color: var(--text-color);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.footer:hover::before {
+  transform: scaleX(1);
+}
+
+.svg-floppy {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  mix-blend-mode: difference;
+  color: var(--mix-color-button);
+  z-index: 2;
+}
+
+.button__text:nth-child(2) {
+  z-index: 2;
+  mix-blend-mode: difference;
+  color: var(--mix-color-button);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  padding: 30px 40px 30px 40px;
+  border: 2px solid var(--text-color);
+  font-family: var(--font-family-PressStart2P);
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.modal-content {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  grid-template-rows: 1fr 38px;
+  gap: 30px 20px;
+  min-width: 257px;
+  max-width: 293px;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+.svg-modal {
+  width: 39px;
+  height: 39px;
+  align-self: center;
+}
+
+.button-modal {
+  grid-area: 2 / 1 / 3 / 3;
+  background-color: transparent;
+  border: 2px solid var(--text-color);
+  padding: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.button-modal:focus {
+  outline: 0;
+}
+
+.button-modal:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text-color);
+}
+
+.button-modal::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background: var(--text-color);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease; /* Плавное масштабирование */
+}
+
+.button-modal:hover::after {
+  transform: scaleX(1);
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+@supports (
+  (-webkit-text-stroke: 1px var(--shadow-color)) or
+    (text-shadow: 1px var(--shadow-color))
+) {
+  .card__cover__signature {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--shadow-color);
+  }
+}
+
+@media (width > 380px) {
+  .theme-menu {
+    padding: 1px 0 24px 20px;
+  }
+  .header {
+    gap: 25px;
+  }
+
+  .header__title {
+    margin-top: 145px;
+  }
+  
+  .card__cover__signature {
+    top: 20px;
+    right: 20px;
+  }
+
+  .footer-button {
+    flex-direction: row;
+  }
+
+  .footer::before {
+    width: 343px;
+    height: 61px;
+  }
+
 }
