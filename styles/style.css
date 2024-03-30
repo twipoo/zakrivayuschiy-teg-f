@@ -406,6 +406,7 @@ dialog:not([open]) {
 dialog::backdrop {
   opacity: 0.75;
   background-color: var(--background-color);
+  background: rgba(0, 0, 0, 0.75);
 }
 
 /* -----------------------------------------------------*/
