@@ -1,16 +1,17 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
+--text-weight: 465;
 --mix-color-button: #00cc14;
 --shadow-color:#000;
 --core-color: #FF0000;
 --color-heart: #FF0000;
 --active-color:rgba(0, 204, 20, 0.6);
 --font-family-inter: 'Inter-Variable', sans-serif;
---font-family-PressStart2P: 'PressStart2P-Regular', sans-serif;
+--font-family-PressStart2P: 'PressStart2P-Regular', 'fantasy';
 --text-color: #00CC14;
 --background-color: #000;
 --background-image: 
-repeating-linear-gradient(to right, #000, #000 2px, transparent 3px, transparent 4px),
-repeating-linear-gradient(to bottom, transparent, transparent 2px, #007f0c 2px, #004306 4px);
+    repeating-linear-gradient(to right, #000, #000 2px, transparent 2px, transparent 4px), 
+    repeating-linear-gradient(to bottom, transparent, transparent 2px, #007f0c 2px, #007f0c 4px);
 }
 

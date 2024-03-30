@@ -16,8 +16,8 @@
     --background-color: #000;
     --text-color: #00CC14;
     --background-image: 
-    repeating-linear-gradient(to right, #000, #000 2px, transparent 3px, transparent 4px),
-    repeating-linear-gradient(to bottom, transparent, transparent 2px, #007f0c 2px, #004306 4px);
+    repeating-linear-gradient(to right, #000, #000 2px, transparent 2px, transparent 4px), 
+    repeating-linear-gradient(to bottom, transparent, transparent 2px, #007f0c 2px, #007f0c 4px);
 }
 
 :root.theme-light {
@@ -34,3 +34,21 @@
     repeating-linear-gradient(180deg,#d3d3d3 0px 2px, transparent 2px 4px),
     linear-gradient(180deg, #e7e7e7 0%, #1a1a1a 100%);
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-weight: 465;
+        --mix-color-button: #00cc14;
+        --shadow-color:#000;
+        --core-color: #FF0000;
+        --color-heart: #FF0000;
+        --active-color:rgba(0, 204, 20, 0.6);
+        --font-family-inter: 'Inter-Variable', sans-serif;
+        --font-family-PressStart2P: 'PressStart2P-Regular', 'fantasy';
+        --text-color: #00CC14;
+        --background-color: #000;
+        --background-image: 
+        repeating-linear-gradient(to right, #000, #000 2px, transparent 2px, transparent 4px), 
+        repeating-linear-gradient(to bottom, transparent, transparent 2px, #007f0c 2px, #007f0c 4px);
+        }
+    }

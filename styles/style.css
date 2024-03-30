@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-attachment: fixed;
 }
 
 .header {
@@ -80,6 +81,7 @@
 
 .theme-menu__button:disabled {
   color: var(--active-color);
+  pointer-events: none;
 }
 
 .theme-menu__button:disabled::before {
@@ -114,10 +116,13 @@
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
   margin-block-start: 100px;
   width: 100%;
   max-width: 700px;
   margin-bottom: 53px;
+  gap: 50px;
 }
 
 .main__list {
@@ -163,11 +168,13 @@
   z-index: 2;
 }
 
-
 .card__cover__image {
   display: block;
   width: 100%;
   object-fit: cover;
+  object-position: center;
+  max-height: 375px;
+  min-height: 372px;
 }
 
 .card__content {
@@ -180,6 +187,7 @@
 .card__content__list {
   display: flex;
   flex-direction: column;
+  font-weight: var(--text-weight);
   gap: 27px;
   padding: 25px 25px 0 25px;
 }
@@ -224,8 +232,9 @@
   border: 2px solid var(--text-color);
   font-size: 14px;
   position: relative;
-  padding: 9px 35px 9px 35px;
   cursor: pointer;
+  width: 130px;
+  height: 38px;
 }
 
 .card__like-button:focus {
@@ -264,64 +273,68 @@
   opacity: 0;
 }
 
-.footer {
+.button__section {
+  display: flex;
+  align-self: center;
   margin-bottom: 100px;
-  border: 2px solid var(--text-color);
+  position: relative;
+  cursor: pointer;
 }
 
-.footer-button {
+.button__save {
+  position: relative;
   display: flex;
   flex-direction: column;
+  background-color: var(--background-color);
   align-items: center;
   gap: 8px;
-  outline: 0;
-  border: 0;
   font-family: var(--font-family-PressStart2P);
   font-size: 14px;
-  line-height: 12.6px;
+  border: 2px solid var(--text-color);
   cursor: pointer;
-  padding-block: 0;
-  background-color: var(--background-color);
-  padding: 15px 20px 17px 20px;
+  max-width: 339px;
+  max-height: 84px;
+  min-height: 55px;
+  padding: 15px 20px 15px 20px;
 }
 
-.footer-button:focus {
-  outline: 0;
-}
-
-.footer-button:focus-visible {
-  box-shadow: 2px 2px 0px 0px var(--text-color);
-}
-
-.footer::before {
+.button__section::after {
   content: "";
   position: absolute;
-  width: 306px;
-  height: 82px;
-  background-color: var(--text-color);
+  width: 100%;
+  height: 100%;
+  background: var(--text-color);
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 0.5s ease;
-  cursor: pointer;
 }
 
-.footer:hover::before {
+.button__section:hover::after {
   transform: scaleX(1);
+}
+
+.button__save:focus {
+  outline: 0;
+}
+
+.button__save:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text-color);
 }
 
 .svg-floppy {
   position: relative;
-  width: 28px;
-  height: 28px;
+  block-size: 28px;
+  inline-size: 28px;
   mix-blend-mode: difference;
   color: var(--mix-color-button);
   z-index: 2;
 }
 
 .button__text:nth-child(2) {
-  z-index: 2;
   mix-blend-mode: difference;
   color: var(--mix-color-button);
+  position: relative;
+  z-index: 2;
 }
 
 .modal {
@@ -335,6 +348,7 @@
   font-size: 14px;
   line-height: 21px;
   text-transform: uppercase;
+  max-width: 341px;
 }
 
 .modal-content {
@@ -342,8 +356,6 @@
   grid-template-columns: 0.1fr 1fr;
   grid-template-rows: 1fr 38px;
   gap: 30px 20px;
-  min-width: 257px;
-  max-width: 293px;
 }
 
 .svg-modal {
@@ -392,38 +404,39 @@ dialog:not([open]) {
 }
 
 dialog::backdrop {
-  opacity: 0.7;
+  opacity: 0.75;
   background-color: var(--background-color);
 }
 
-.filter__one {
+/* -----------------------------------------------------*/
+.filter__brightnees {
   filter: brightness(50%);
 }
 
-.filter__two {
+.filter__saturate {
   filter: saturate(200%);
 }
 
-.filter__three {
+.filter__grayscale {
   filter: grayscale(67%);
 }
 
-.filter__four {
+.filter__hue-rotate {
   filter: hue-rotate(25deg);
 }
 
-.filter__five {
+.filter__invert {
   filter: invert(100%);
 }
 
-.filter__six {
+.filter__blur {
   filter: blur(5px);
 }
 
-.filter__seven {
+.filter__contrast {
   filter: contrast(150%) brightness(120%);
 }
-
+/*--------------------------------------------------------*/
 @supports (
   (-webkit-text-stroke: 1px var(--shadow-color)) or
     (text-shadow: 1px var(--shadow-color))
@@ -445,19 +458,32 @@ dialog::backdrop {
   .header__title {
     margin-top: 145px;
   }
-  
+
   .card__cover__signature {
     top: 20px;
     right: 20px;
   }
 
-  .footer-button {
+  .card__cover__image {
+    max-height: 696px;
+    min-height: 694px;
+  }
+
+  .button__save {
     flex-direction: row;
   }
 
-  .footer::before {
-    width: 343px;
-    height: 61px;
+  .svg-floppy {
+    block-size: 21px;
+    inline-size: 21px;
   }
 
+  .modal {
+    max-width: 357px;
+    padding: 31px 40px 30px 29px;
+  }
+
+  .modal-content {
+    min-width: 293px;
+  }
 }
