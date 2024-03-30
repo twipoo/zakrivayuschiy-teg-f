@@ -10,8 +10,5 @@
 --font-family-PressStart2P: 'PressStart2P-Regular', 'fantasy';
 --text-color: #00CC14;
 --background-color: #000;
---background-image: 
-    repeating-linear-gradient(to right, #000, #000 2px, transparent 2px, transparent 4px), 
-    repeating-linear-gradient(to bottom, transparent, transparent 2px, #007f0c 2px, #007f0c 4px);
 }
 
